@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIS Club KFU - Connect Platform</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kfuNavy: '#0A192F',
+                        kfuBlue: '#1E3A8A',
+                        kfuLightBlue: '#3B82F6',
+                        kfuAccent: '#60A5FA',
+                    },
+                    fontFamily: {
+                        arabic: ['Tajawal', 'sans-serif'],
+                        english: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .social-card { transition: all 0.3s ease; }
+        .social-card:hover { transform: translateY(-4px); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-arabic flex flex-col min-h-screen">
+
+    <!-- Navigation Header -->
+    <header class="bg-kfuNavy/95 backdrop-blur-md text-white sticky top-0 z-50 shadow-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo Box -->
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="border-2 border-white px-3 py-1 text-center font-bold tracking-wider bg-kfuNavy shadow-inner">
+                    <div class="text-2xl font-black leading-none font-english">MIS</div>
+                    <div class="text-[8px] uppercase tracking-tighter text-slate-200 mt-1 font-english">Management Information Systems Club KFU</div>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+                <a href="#about" class="hover:text-kfuAccent transition" data-key="navAbout">عن النادي</a>
+                <a href="#committees" class="hover:text-kfuAccent transition" data-key="navCommittees">اللجان</a>
+                <a href="#socials" class="hover:text-kfuAccent transition" data-key="navSocials">التواصل الاجتماعي</a>
+            </nav>
+
+            <!-- Language Switcher -->
+            <button id="langToggleBtn" onclick="toggleLanguage()" class="px-4 py-2 text-xs font-bold rounded-lg bg-kfuLightBlue hover:bg-blue-600 transition text-white flex items-center gap-2 shadow-sm">
+                <i class="fa-solid fa-globe"></i>
+                <span id="langBtnText">English</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-kfuNavy via-slate-900 to-blue-950 text-white py-20 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm font-semibold mb-6 uppercase tracking-wider font-english" data-key="heroBadge">King Faisal University</span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold mb-6 leading-tight" data-key="heroTitle">منصة Connect - نادي نظم المعلومات الإدارية</h1>
+            <p class="text-base sm:text-xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed" data-key="heroSubtitle">بوابتك للتعرف على لجان النادي، أنشطته المتنوعة، والتواصل المباشر مع منصاتنا الرسمية بجامعة الملك فيصل.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#committees" class="px-6 py-3 bg-kfuLightBlue hover:bg-blue-600 text-white font-bold rounded-xl shadow-lg transition flex items-center gap-2">
+                    <i class="fa-solid fa-sitemap"></i>
+                    <span data-key="btnCommittees">استكشف اللجان</span>
+                </a>
+                <a href="#socials" class="px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition flex items-center gap-2">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <span data-key="btnSocials">حسابات التواصل</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="space-y-4">
+                    <h2 class="text-3xl font-bold text-kfuNavy border-r-4 border-kfuLightBlue pr-4" data-key="aboutTitle">عن النادي والمنصة</h2>
+                    <p class="text-slate-600 leading-relaxed text-lg" data-key="aboutText">يهدف نادي نظم المعلومات الإدارية بجامعة الملك فيصل إلى تطوير الطلاب وتمكينهم تقنياً وإدارياً من خلال بيئة تفاعلية تعزز مهارات الابتكار والقيادة وتربط التعليم الأكاديمي بالتطبيق العملي.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-6 text-center">
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm">
+                        <div class="text-4xl font-extrabold text-kfuBlue mb-2 font-english">500+</div>
+                        <div class="text-sm text-slate-600 font-bold" data-key="statMembers">مستفيد وعضو</div>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm">
+                        <div class="text-4xl font-extrabold text-kfuBlue mb-2 font-english">6</div>
+                        <div class="text-sm text-slate-600 font-bold" data-key="statCommittees">لجان متخصصة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Committees Section -->
+    <section id="committees" class="py-16 bg-slate-100/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-kfuNavy mb-3" data-key="committeesTitle">لجان النادي Executive Committees</h2>
+                <p class="text-slate-600" data-key="committeesSubtitle">تعرف على الهيكل التنظيمي واللجان التي تسهم في تحقيق أهداف نادي MIS</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Committee 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-key="c1Title">اللجنة التقنية</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-key="c1Desc">مسؤولة عن تطوير المهارات البرمجية، الورش التقنية، وإدارة الحلول البرمجية والمواقع الخاصة بالنادي.</p>
+                </div>
+
+                <!-- Committee 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-key="c2Title">لجنة الإعلام والتسويق</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-key="c2Desc">إدارة حسابات التواصل الاجتماعي، إعداد المحتوى الإبداعي والتصاميم، وإبراز كافة أنشطة النادي.</p>
+                </div>
+
+                <!-- Committee 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-key="c3Title">لجنة التنظيم والفعاليات</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-key="c3Desc">التخطيط والإشراف الميداني على الورش والفعاليات والملتقيات لضمان تنظيم عالي المستوى.</p>
+                </div>
+
+                <!-- Committee 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-key="c4Title">لجنة العلاقات العامة</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-key="c4Desc">بناء الشراكات والاتصالات الخارجية واستقطاب المتحدثين والمدربين المتميزين للورش.</p>
+                </div>
+
+                <!-- Committee 5 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-key="c5Title">لجنة المحتوى العلمي</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-key="c5Desc">إعداد وتدقيق المادة العلمية للأبحاث والورش، وتزويد الطلاب بالملخصات والمصادر المفيدة.</p>
+                </div>
+
+                <!-- Committee 6 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-key="c6Title">لجنة الموارد البشرية</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-key="c6Desc">متابعة أداء الأعضاء، تنظيم عملية الانضمام وتوزيع المهام، وتقييم جودة مخرجات النادي.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section id="socials" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-kfuNavy mb-3" data-key="socialsTitle">قنوات التواصل الاجتماعي</h2>
+                <p class="text-slate-600" data-key="socialsSubtitle">تواصل معنا وتابع جديدنا عبر الحسابات الرسمية المعتمدة لنادي MIS</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@mis.club1?_r=1&_t=ZS-9B1HO9bM3Ww" target="_blank" class="social-card bg-slate-50 p-6 rounded-2xl border border-slate-200 flex items-center space-x-4 space-x-reverse hover:bg-white hover:shadow-md transition">
+                    <div class="w-14 h-14 rounded-xl bg-black text-white flex items-center justify-center text-2xl shrink-0">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-900 font-english">TikTok</h3>
+                        <p class="text-xs text-slate-500 font-english">@mis.club1</p>
+                        <span class="text-xs text-blue-600 font-semibold mt-1 inline-block" data-key="clickToVisit">إضغط للزيارة &rarr;</span>
+                    </div>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/misclub_kfu?exln=MTUydmh0dHcxcjhlZg==" target="_blank" class="social-card bg-slate-50 p-6 rounded-2xl border border-slate-200 flex items-center space-x-4 space-x-reverse hover:bg-white hover:shadow-md transition">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center text-2xl shrink-0">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-900 font-english">Instagram</h3>
+                        <p class="text-xs text-slate-500 font-english">@misclub_kfu</p>
+                        <span class="text-xs text-pink-600 font-semibold mt-1 inline-block" data-key="clickToVisit">إضغط للزيارة &rarr;</span>
+                    </div>
+                </a>
+
+                <!-- X (Twitter) -->
+                <a href="https://x.com/MISClub_KFU" target="_blank" class="social-card bg-slate-50 p-6 rounded-2xl border border-slate-200 flex items-center space-x-4 space-x-reverse hover:bg-white hover:shadow-md transition">
+                    <div class="w-14 h-14 rounded-xl bg-slate-900 text-white flex items-center justify-center text-2xl shrink-0 font-english font-black">
+                        X
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-900 font-english">X (Twitter)</h3>
+                        <p class="text-xs text-slate-500 font-english">@MISClub_KFU</p>
+                        <span class="text-xs text-slate-700 font-semibold mt-1 inline-block" data-key="clickToVisit">إضغط للزيارة &rarr;</span>
+                    </div>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/966573788826" target="_blank" class="social-card bg-slate-50 p-6 rounded-2xl border border-slate-200 flex items-center space-x-4 space-x-reverse hover:bg-white hover:shadow-md transition">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-2xl shrink-0">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-900 font-english">WhatsApp</h3>
+                        <p class="text-xs text-slate-500 font-english">+966 57 378 8826</p>
+                        <span class="text-xs text-emerald-600 font-semibold mt-1 inline-block" data-key="clickToVisit">إضغط للتواصل &rarr;</span>
+                    </div>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/misclub-kfu-00b741339?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-card bg-slate-50 p-6 rounded-2xl border border-slate-200 flex items-center space-x-4 space-x-reverse hover:bg-white hover:shadow-md transition">
+                    <div class="w-14 h-14 rounded-xl bg-blue-700 text-white flex items-center justify-center text-2xl shrink-0">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-900 font-english">LinkedIn</h3>
+                        <p class="text-xs text-slate-500 font-english">MIS Club KFU</p>
+                        <span class="text-xs text-blue-700 font-semibold mt-1 inline-block" data-key="clickToVisit">إضغط للزيارة &rarr;</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-kfuNavy text-white mt-auto border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-slate-400 text-sm">
+            <p class="mb-2" data-key="footerCopyright">جميع الحقوق محفوظة © 2026 لنادي نظم المعلومات الإدارية (MIS Club) - جامعة الملك فيصل</p>
+            <p class="text-xs text-slate-500 font-english" data-key="footerUniversity">King Faisal University - All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        let currentLang = 'ar';
+
+        const translations = {
+            ar: {
+                navAbout: "عن النادي",
+                navCommittees: "اللجان",
+                navSocials: "التواصل الاجتماعي",
+                heroBadge: "جامعة الملك فيصل",
+                heroTitle: "منصة Connect - نادي نظم المعلومات الإدارية",
+                heroSubtitle: "بوابتك للتعرف على لجان النادي، أنشطته المتنوعة، والتواصل المباشر مع منصاتنا الرسمية بجامعة الملك فيصل.",
+                btnCommittees: "استكشف اللجان",
+                btnSocials: "حسابات التواصل",
+                aboutTitle: "عن النادي والمنصة",
+                aboutText: "يهدف نادي نظم المعلومات الإدارية بجامعة الملك فيصل إلى تطوير الطلاب وتمكينهم تقنياً وإدارياً من خلال بيئة تفاعلية تعزز مهارات الابتكار والقيادة وتربط التعليم الأكاديمي بالتطبيق العملي.",
+                statMembers: "مستفيد وعضو",
+                statCommittees: "لجان متخصصة",
+                committeesTitle: "لجان النادي Executive Committees",
+                committeesSubtitle: "تعرف على الهيكل التنظيمي واللجان التي تسهم في تحقيق أهداف نادي MIS",
+                c1Title: "اللجنة التقنية",
+                c1Desc: "مسؤولة عن تطوير المهارات البرمجية، الورش التقنية، وإدارة الحلول البرمجية والمواقع الخاصة بالنادي.",
+                c2Title: "لجنة الإعلام والتسويق",
+                c2Desc: "إدارة حسابات التواصل الاجتماعي، إعداد المحتوى الإبداعي والتصاميم، وإبراز كافة أنشطة النادي.",
+                c3Title: "لجنة التنظيم والفعاليات",
+                c3Desc: "التخطيط والإشراف الميداني على الورش والفعاليات والملتقيات لضمان تنظيم عالي المستوى.",
+                c4Title: "لجنة العلاقات العامة",
+                c4Desc: "بناء الشراكات والاتصالات الخارجية واستقطاب المتحدثين والمدربين المتميزين للورش.",
+                c5Title: "لجنة المحتوى العلمي",
+                c5Desc: "إعداد وتدقيق المادة العلمية للأبحاث والورش، وتزويد الطلاب بالملخصات والمصادر المفيدة.",
+                c6Title: "لجنة الموارد البشرية",
+                c6Desc: "متابعة أداء الأعضاء، تنظيم عملية الانضمام وتوزيع المهام، وتقييم جودة مخرجات النادي.",
+                socialsTitle: "قنوات التواصل الاجتماعي",
+                socialsSubtitle: "تواصل معنا وتابع جديدنا عبر الحسابات الرسمية المعتمدة لنادي MIS",
+                clickToVisit: "إضغط للزيارة ←",
+                footerCopyright: "جميع الحقوق محفوظة © 2026 لنادي نظم المعلومات الإدارية (MIS Club) - جامعة الملك فيصل",
+                footerUniversity: "King Faisal University - All Rights Reserved"
+            },
+            en: {
+                navAbout: "About Us",
+                navCommittees: "Committees",
+                navSocials: "Social Media",
+                heroBadge: "King Faisal University",
+                heroTitle: "Connect Platform - MIS Club",
+                heroSubtitle: "Your official portal to discover club committees, explore activities, and connect with MIS Club at KFU.",
+                btnCommittees: "Explore Committees",
+                btnSocials: "Social Channels",
+                aboutTitle: "About The Club & Connect",
+                aboutText: "The MIS Club at King Faisal University aims to empower students technically and managerially through an interactive environment fostering innovation and leadership.",
+                statMembers: "Members & Beneficiaries",
+                statCommittees: "Specialized Committees",
+                committeesTitle: "Executive Committees",
+                committeesSubtitle: "Explore the organizational structure and committees driving MIS Club's success",
+                c1Title: "Technical Committee",
+                c1Desc: "Responsible for programming skills, technical workshops, and managing club websites & software.",
+                c2Title: "Media & Marketing Committee",
+                c2Desc: "Managing social media accounts, creating creative content, design, and branding.",
+                c3Title: "Event Organization Committee",
+                c3Desc: "Planning and supervising workshops and events to ensure top-quality execution.",
+                c4Title: "Public Relations Committee",
+                c4Desc: "Building external partnerships and inviting distinguished speakers and trainers.",
+                c5Title: "Academic Content Committee",
+                c5Desc: "Preparing scientific content for workshops and providing students with learning resources.",
+                c6Title: "Human Resources Committee",
+                c6Desc: "Tracking member performance, coordinating recruitment, and managing team workflow.",
+                socialsTitle: "Social Media Channels",
+                socialsSubtitle: "Connect with us on our official verified social media channels",
+                clickToVisit: "Click to visit →",
+                footerCopyright: "All Rights Reserved © 2026 MIS Club - King Faisal University",
+                footerUniversity: "King Faisal University - All Rights Reserved"
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.body.className = currentLang === 'ar' ? 'bg-slate-50 text-slate-800 font-arabic flex flex-col min-h-screen' : 'bg-slate-50 text-slate-800 font-english flex flex-col min-h-screen';
+
+            document.getElementById('langBtnText').innerText = currentLang === 'ar' ? 'English' : 'عربي';
+
+            // Update text contents
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[currentLang][key]) {
+                    el.innerText = translations[currentLang][key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>
